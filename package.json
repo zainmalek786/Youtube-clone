@@ -10,5 +10,8 @@
     "javascript"
   ],
   "author": "Zain Akbar Malik",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
