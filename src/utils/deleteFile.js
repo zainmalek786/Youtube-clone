@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import { ApiError } from "./apiError";
+import { ApiError } from "./apiError.js";
 
 cloudinary.config({
     cloud_name: "ddzunmcdq", 
@@ -8,16 +8,16 @@ cloudinary.config({
 })
 
 const deleteFromCloudinary = async (imageToBeDeleted)=>{
-console.log("image to be deleted uri:",imageToBeDeleted);
+console.log("File to be deleted uri:",imageToBeDeleted);
 
 try {
  const publicId = imageToBeDeleted.replace(/^.*\/upload\/[v\d]+\/|\.[^/.]+$/g, '');
  await cloudinary.uploader.destroy(publicId,{resource_type:"auto"})
- console.log("Image deleted successffully",imageToBeDeleted);
+ console.log("File deleted successffully",imageToBeDeleted);
  
  
 } catch (error) {
-    throw new ApiError(500,"Unable to delete Image")
+    throw new ApiError(500,"Unable to delete File")
     
 }
 

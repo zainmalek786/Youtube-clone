@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { changeCurrentPassword, loginUser, logOutUser,getUserChannelProfile,getUserWatchHistory, refreshAccessToken, registerUser,getCurrentUser,updateUserAvatar,updateUserCoverImage } from "../controllers/user.controller.js";
+import { changeCurrentPassword, updateAccountDetails, loginUser, logOutUser,getUserChannelProfile,getUserWatchHistory, refreshAccessToken, registerUser,getCurrentUser,updateUserAvatar,updateUserCoverImage } from "../controllers/user.controller.js";
 import {upload} from "../middlewares/multer.middleware.js"
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 

@@ -1,5 +1,5 @@
 // import { asyncHandler } from "../utils/asyncHandler";
-import {asyncHandler} from  "../utils/asyncHandler.js";
+import { asyncHandler } from  "../utils/asyncHandler.js";
 import { ApiError } from "../utils/apiError.js";
 import { User } from "../models/User.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
@@ -75,7 +75,7 @@ avatar: avatar.url
 const createdUser = await User.findById(user._id).select(
     "-password -refreshToken"
 )
-console.log("user create hogya:" ,createdUser);
+console.log("user created:" ,createdUser);
 
 if (!createdUser) {
     throw new ApiError(500,"Cannot register user internal server error")
@@ -184,7 +184,7 @@ const logOutUser = asyncHandler( async(req,res)=>{
     }
    )
 
-   const options ={
+   const options = {
     httpOnly:true,
     secure:true
    }
